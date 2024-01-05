@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lobi_poliwangi_mobile/Beranda/tampilanBeranda.dart';
+import 'package:lobi_poliwangi_mobile/profil/profile_login.dart';
 import 'Beasiswa/tampilanBeasiswa.dart';
 import 'Lomba/TampilanLomba.dart';
 import 'Preestasi/tampilanPrestasi.dart';
@@ -33,7 +34,7 @@ class _BottomNavigationDemoState extends State<BottomNavigationDemo> {
     tampilanBeasiswa(),
     tampilanLomba(),
     tampilanPrestasi(),
-    FivePage(),
+    ProfileScreen(),
   ];
 
   void _onTabTapped(int index) {
@@ -85,11 +86,5 @@ class _BottomNavigationDemoState extends State<BottomNavigationDemo> {
   }
 }
 
-class FivePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: Text('Halaman Profil'),
-    );
-  }
-}
+
+

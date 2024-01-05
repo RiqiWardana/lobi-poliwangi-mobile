@@ -19,7 +19,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.2.2 <4.0.0'
+  sdk: '>=3.1.1 <4.0.0'
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -74,6 +74,7 @@ flutter:
     - assets/wisuda.webp
     - assets/ipk-mitos-realistis.png
     - assets/image2.png
+    -assets/profile.jpg
     - fonts/Poppins-Black.ttf
     - fonts/Poppins-BlackItalic.ttf
     - fonts/Poppins-Bold.ttf
