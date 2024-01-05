@@ -58,7 +58,6 @@ class _tampilanBeasiswaState extends State<tampilanBeasiswa> {
     if (query.isEmpty) {
       getData();
     } else {
-      // Filter the data based on the search query
       List<Beasiswa> filteredData = dataSuplier
           .where((lomba) =>
               lomba.namaBeasiswa.toLowerCase().contains(query.toLowerCase()))
