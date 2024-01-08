@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:lobi_poliwangi_mobile/InputBeasiswa/fromBeasiswa.dart';
 import 'package:lobi_poliwangi_mobile/InputLomba/formLomba.dart';
-import 'package:lobi_poliwangi_mobile/PangajuanPrestasi/formPengajuan.dart';
-import 'package:lobi_poliwangi_mobile/profil/PrestasiSaya.dart';
+import 'package:lobi_poliwangi_mobile/Login_mahasiswa/LoginForm.dart';
 
-class ProfileScreen extends StatelessWidget {
+class ProfileGuest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,8 +15,8 @@ class ProfileScreen extends StatelessWidget {
               color: Color(0xFF1C2868),
               padding: EdgeInsets.all(16.0),
               alignment: Alignment.center,
-              child: const Text(
-                'Profile',
+              child: Text(
+                'Guest Profile',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 20,
@@ -33,17 +32,19 @@ class ProfileScreen extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Container(
-              width: double.infinity, // Make the button take the full width
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: ElevatedButton(
-                onPressed: () {
-                  // Perform log out logic here
-                  // For example, you can navigate to the login screen or show a confirmation dialog
-                },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
+                  primary: Colors.blue,
                 ),
-                child: const Text('Log Out'),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginApp()),
+                  );
+                },
+                child: Text('Login'),
               ),
             ),
           ],
@@ -65,7 +66,7 @@ class ProfileCard extends StatelessWidget {
             color: Colors.grey.withOpacity(0.5),
             spreadRadius: 3,
             blurRadius: 7,
-            offset: Offset(0, 3), // changes position of the shadow
+            offset: Offset(0, 3),
           ),
         ],
       ),
@@ -74,60 +75,20 @@ class ProfileCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(50.0),
-              child: Image.asset(
-                'assets/profile.jpg',
-                width: 100,
-                height: 100,
-                fit: BoxFit.cover,
-              ),
+            Icon(
+              Icons.person,
+              size: 100,
+              color: Colors.grey,
             ),
             SizedBox(height: 16),
-            const Text(
-              'Rahmah Sary F ',
+            Text(
+              'Guest',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const Text(
-              '362258302177',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
-            ),
-            const Text(
-              'Program of Study: Computer Science',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.grey,
-              ),
-            ),
             SizedBox(height: 16),
-            ProfileOption(
-              title: 'Prestasi saya',
-              description: 'Lihat data Prestasi',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => PrestasiListScreen()),
-                );
-              },
-            ),
-            ProfileOption(
-              title: 'Mengajukan Prestasi',
-              description: 'Mengajukan Informasi',
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => PrestasiMahasiswaForm(),
-                  ),
-                );
-              },
-            ),
             ProfileOption(
               title: 'Mengajukan Beasiswa',
               description: 'Mengajukan Informasi Beasiswa',
@@ -173,14 +134,14 @@ class ProfileOption extends StatelessWidget {
           child: ListTile(
             title: Text(
               title,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             subtitle: Text(
               description,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey,
               ),

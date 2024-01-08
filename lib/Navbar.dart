@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lobi_poliwangi_mobile/Beranda/tampilanBeranda.dart';
+import 'package:lobi_poliwangi_mobile/profil/profile_guest.dart';
 import 'package:lobi_poliwangi_mobile/profil/profile_login.dart';
 import 'Beasiswa/tampilanBeasiswa.dart';
 import 'Lomba/TampilanLomba.dart';
@@ -34,7 +35,7 @@ class _BottomNavigationDemoState extends State<BottomNavigationDemo> {
     tampilanBeasiswa(),
     tampilanLomba(),
     tampilanPrestasi(),
-    ProfileScreen(),
+    ProfileGuest(),
   ];
 
   void _onTabTapped(int index) {
