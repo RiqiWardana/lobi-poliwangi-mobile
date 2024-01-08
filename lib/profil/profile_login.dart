@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lobi_poliwangi_mobile/InputBeasiswa/fromBeasiswa.dart';
+import 'package:lobi_poliwangi_mobile/InputLomba/formLomba.dart';
+import 'package:lobi_poliwangi_mobile/PangajuanPrestasi/formPengajuan.dart';
 import 'package:lobi_poliwangi_mobile/profil/PrestasiSaya.dart';
 
 
@@ -102,14 +105,35 @@ class ProfileCard extends StatelessWidget {
             ProfileOption(
               title: 'Mengajukan Prestasi ',
               description: 'Mengajukan Informasi',
+              onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PrestasiMahasiswaForm()),
+                  );
+              }
             ),
             ProfileOption(
               title: 'Mengajukan Beasiswa',
               description: 'Mengajukan Informasi Beasiswa',
+              onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FromBeasiswa()),
+                  );
+              }
             ),
             ProfileOption(
               title: 'Mengajukan Lomba',
               description: 'Mengajukan Informasi Lomba',
+              onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => FormLomba()),
+                  );
+              }
             ),
           ],
         ),
